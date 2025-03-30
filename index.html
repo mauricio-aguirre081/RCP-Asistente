@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCP-COUNTER</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    
+
+</head>
+<body>
+    <h1 class="titulo1">ASISTENTE RCP</h1>
+    <H2 class="titulo2">Ayuda a realizar la maniobra de Reanimación Cardiopulmonar</H2>
+    <h2 class="titulo2">Y mantener el ritmo de las compresiones toráxicas</h2>
+    <div class="cronometro">
+        <div id="tiempo">00:00:00</div>
+        <div id="ciclos">Ciclos: 0</div>
+        <div class="botones">
+            <button id="inicio">Inicio</button>
+            <button id="pausa">Pausa</button>
+            <button id="reinicio">Reinicio</button>
+        </div>
+        <audio id="audio" src="./music/pulse.mp3"></audio>
+    </div>
+
+    <div class="button-links">
+        <a href="signos_vitales.html" id="vita">Signos Vitales</a>
+        <a href="primeros_auxilios.html" id="aux">Primeros Auxilios</a>
+        <a href="rcp_edad.html" id="rcp">RCP por Edad</a>
+        <a href="heimlich.html" id="heim">Maniobra de Heimlich</a>
+        
+    </div>
+
+    <div class="button-links">
+        <p class="parrafo_aporte">Si te gustó esta aplicación y quieres apoyar mi trabajo te dejo un link</p>
+        <a href="https://link.mercadopago.com.ar/mauricioaguirre081">Quiero Apoyar</a>
+        
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

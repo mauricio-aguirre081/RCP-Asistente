@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signos Vitales</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos responsivos */
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Signos Vitales</h1>
+    <a href="index.html">Volver al Asistente</a>
+
+    <div class="table-container">
+        <table>
+            <caption>Signos vitales y sus valores normales según la edad:</caption>
+            <thead>
+                <tr>
+                    <th>Signo Vital</th>
+                    <th>Adulto (≥18 años)</th>
+                    <th>Adulto Mayor (≥65 años)</th>
+                    <th>Pediátrico (1-12 años)</th>
+                    <th>Neonato (0-1 año)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Signo Vital">Frecuencia Cardíaca (latidos/min)</td>
+                    <td data-label="Adulto (≥18 años)">60-100</td>
+                    <td data-label="Adulto Mayor (≥65 años)">50-100</td>
+                    <td data-label="Pediátrico (1-12 años)">80-120</td>
+                    <td data-label="Neonato (0-1 año)">100-180</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Frecuencia Respiratoria (respiraciones/min)</td>
+                    <td data-label="Adulto (≥18 años)">12-20</td>
+                    <td data-label="Adulto Mayor (≥65 años)">12-22</td>
+                    <td data-label="Pediátrico (1-12 años)">20-30</td>
+                    <td data-label="Neonato (0-1 año)">30-60</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Presión Arterial (mmHg)</td>
+                    <td data-label="Adulto (≥18 años)">90/60 - 120/80</td>
+                    <td data-label="Adulto Mayor (≥65 años)">110/70 - 140/90</td>
+                    <td data-label="Pediátrico (1-12 años)">90/50 - 110/70</td>
+                    <td data-label="Neonato (0-1 año)">60/30 - 90/60</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Temperatura Corporal (°C)</td>
+                    <td data-label="Adulto (≥18 años)">36.1 - 37.5</td>
+                    <td data-label="Adulto Mayor (≥65 años)">35.8 - 37.2</td>
+                    <td data-label="Pediátrico (1-12 años)">36.5 - 37.8</td>
+                    <td data-label="Neonato (0-1 año)">36.5 - 37.8</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Saturación de Oxígeno (SpO₂, %)</td>
+                    <td data-label="Adulto (≥18 años)">≥95%</td>
+                    <td data-label="Adulto Mayor (≥65 años)">≥92%</td>
+                    <td data-label="Pediátrico (1-12 años)">≥95%</td>
+                    <td data-label="Neonato (0-1 año)">≥90%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <caption>Partes del cuerpo donde se pueden medir los signos vitales:</caption>
+            <thead>
+                <tr>
+                    <th>Signo Vital</th>
+                    <th>Parte del Cuerpo</th>
+                    <th>Explicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Signo Vital">Frecuencia Cardíaca (Pulso)</td>
+                    <td data-label="Parte del Cuerpo">Muñeca (pulso radial), cuello (pulso carotídeo), brazo (pulso braquial), tobillo (pulso pedio o tibial posterior)</td>
+                    <td data-label="Explicación">Se mide palpando con los dedos índice y medio, contando los latidos por minuto.</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Frecuencia Respiratoria</td>
+                    <td data-label="Parte del Cuerpo">Pecho, abdomen, nariz</td>
+                    <td data-label="Explicación">Se observa el movimiento del pecho o abdomen durante la respiración. También puede medirse con sensores en la nariz o boca.</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Presión Arterial</td>
+                    <td data-label="Parte del Cuerpo">Brazo (arteria braquial) o muñeca</td>
+                    <td data-label="Explicación">Se usa un esfigmomanómetro (baumanómetro) y un estetoscopio o un tensiómetro digital para medir la presión en las arterias.</td>
+                </tr>
+                <tr>
+                    <td data-label="Signo Vital">Temperatura Corporal</td>
+                    <td data-label="Parte del Cuerpo">Boca (oral), axila (axilar), recto (rectal), oído (timpánica), frente (temporal)</td>
+                    <td data-label="Explicación">Se usa un termómetro para medir el calor del cuerpo. La temperatura rectal es la más precisa.</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <a href="index.html">Volver al Asistente</a>
+</body>
+
+</html>

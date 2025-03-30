@@ -1,0 +1,241 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+}
+
+.titulo1 {
+    text-align: center;
+}
+
+.titulo2 {
+    text-align: center;
+}
+
+.parrafo_aporte {
+    text-align: center;
+}
+.cronometro {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cronometro #tiempo {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.cronometro #ciclos {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.cronometro .botones button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cronometro .botones button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los enlaces como botones */
+.button-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-links a {
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    width: 200px; /* Ancho fijo para los botones */
+    text-align: center; /* Centrar el texto dentro del botón */
+}
+
+
+
+#vita {
+    background-color: rgba(29, 198, 26, 0.916);
+}
+
+#vita:hover {
+    background-color: rgba(70, 223, 67, 0.916);
+}
+
+
+
+#aux {
+    background-color: rgba(241, 64, 64, 0.916);
+}
+
+#aux:hover {
+    background-color: rgba(243, 101, 101, 0.916);
+}
+
+#rcp {
+    background-color: rgba(192, 24, 139, 0.916);
+}
+
+#rcp:hover {
+    background-color: rgba(218, 50, 165, 0.916);
+}
+
+#heim {
+    background-color: rgba(111, 21, 222, 0.916);
+}
+
+#heim:hover {
+    background-color: rgba(164, 64, 235, 0.916);
+}
+
+
+.button-links a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para las tablas */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Media query para tablas responsivas */
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+        * Aria-label has no advantage, it won't be read if the content is visible
+        * It may not be read by all screen readers (voiceover)
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block; /* Asegura que el contenido se muestre */
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+/* Estilos para las páginas de contenido */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content section {
+    margin-bottom: 15px;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.content li {
+    margin-bottom: 5px;
+}
+
+/* Media queries para responsividad general */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+}
