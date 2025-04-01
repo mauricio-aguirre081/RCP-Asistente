@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maniobra de Heimlich</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         body {
             font-family: sans-serif;
@@ -16,8 +19,36 @@
             color: #333;
         }
 
-        p, ul, ol {
-            line-height: 1.6;
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         a {
@@ -34,11 +65,129 @@
         a:hover {
             background-color: #0056b3;
         }
+
+        /* Estilos responsivos */
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        /* Estilos del player */
+
+        .audio-player-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 10px auto; /* Reducir margen /
+background-color: #f0f0f0;
+padding: 10px; / Reducir padding */
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+max-width: 300px;
+}
+
+.audio-controls {
+display: flex;
+justify-content: center;
+gap: 5px; /* Reducir gap /
+margin-bottom: 5px; / Reducir margen */
+}
+
+.audio-controls button {
+background-color: #007bff;
+color: #fff;
+border: none;
+padding: 5px 10px; /* Reducir padding /
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.9em; / Reducir tamaño de fuente */
+}
+
+.audio-controls button:hover {
+background-color: #0056b3;
+}
+
+.audio-controls button i {
+font-size: 1em; /* Reducir tamaño de ícono */
+}
+
+.audio-player-container a {
+text-decoration: none;
+background-color: #4caf50;
+color: #fff;
+padding: 8px 16px; /* Reducir padding /
+border-radius: 5px;
+font-size: 0.9em; / Reducir tamaño de fuente */
+}
+
+.audio-player-container a:hover {
+background-color: #45a049;
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 600px) {
+.audio-player-container {
+width: 90%;
+}
+}
     </style>
+
 </head>
 <body>
     <h1>Maniobra de Heimlich</h1>
     <a href="index.html">Volver al Asistente</a>
+
+    <div class="audio-player-container">
+        <h3>Escuchar Página</h3>
+        <div class="audio-controls">
+            <button id="play-btn"><i class="fas fa-play"></i></button>
+            <button id="pause-btn"><i class="fas fa-pause"></i></button>
+            <button id="stop-btn"><i class="fas fa-stop"></i></button>
+        </div>
+        <a href="./music/heimlich.mp3" download>Descargar Audio</a>
+        <audio id="audio" src="./music/heimlich.mp3"></audio>
+    </div>
 
     <p><strong>¿Qué es la Maniobra de Heimlich?</strong></p>
     <p>La Maniobra de Heimlich es una técnica de emergencia utilizada para desobstruir las vías respiratorias cuando una persona se está atragantando debido a un objeto, alimento o líquido (obstrucción de la vía aérea por cuerpo extraño – OVACE).</p>
@@ -123,5 +272,25 @@
     <p><strong> Precaución:</strong> No hacer la maniobra en bebés menores de 1 año como en adultos, ya que puede causar daño en los órganos.</p>
 
     <a href="./index.html">Volver al Asistente</a>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const playBtn = document.getElementById('play-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const stopBtn = document.getElementById('stop-btn');
+
+        playBtn.addEventListener('click', () => {
+            audio.play();
+        });
+
+        pauseBtn.addEventListener('click', () => {
+            audio.pause();
+        });
+
+        stopBtn.addEventListener('click', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    </script>
 </body>
 </html>
